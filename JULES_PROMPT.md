@@ -20,7 +20,7 @@ Goals:
 Useful commands:
 
 ```powershell
-.\v2\resolve-allods-workspace.ps1
+.\v2\resolve-allods-workspace.ps1 -ReviewPack
 .\v2\check-addons-freshness.ps1
 .\v2\audit-allods-workspace.ps1
 .\v2\search-v2.ps1 "LabMap" -Scope Addons
