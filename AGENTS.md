@@ -102,6 +102,10 @@ context, not generated truth.
 
 ## Game Paths
 
-- Game install: `C:\VK Play\Аллоды Онлайн`
-- Game addon install folder: `C:\VK Play\Аллоды Онлайн\data\Mods\Addons`
-- Main Lua addon log: `C:\VK Play\Аллоды Онлайн\Personal\Logs\mods.txt`
+- Prefer the `ALLODS_GAME_ADDONS_PATH` environment variable or an explicit
+  `-GameAddonsPath` argument when installing a PAK into the game.
+- Default local fallback game install: `C:\VK Play\Аллоды Онлайн`
+- Default local fallback addon folder:
+  `C:\VK Play\Аллоды Онлайн\data\Mods\Addons`
+- Default local fallback Lua addon log:
+  `C:\VK Play\Аллоды Онлайн\Personal\Logs\mods.txt`

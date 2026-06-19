@@ -2,7 +2,7 @@ param(
     [Parameter(Mandatory = $true)]
     [string] $PakPath,
 
-    [string] $GameAddonsPath = 'C:\VK Play\Аллоды Онлайн\data\Mods\Addons',
+    [string] $GameAddonsPath,
 
     [switch] $Overwrite
 )
@@ -10,6 +10,14 @@ param(
 $ErrorActionPreference = 'Stop'
 
 $resolvedPak = (Resolve-Path -LiteralPath $PakPath).Path
+if (-not $GameAddonsPath) {
+    $GameAddonsPath = $env:ALLODS_GAME_ADDONS_PATH
+}
+
+if (-not $GameAddonsPath) {
+    $GameAddonsPath = 'C:\VK Play\Аллоды Онлайн\data\Mods\Addons'
+}
+
 if (-not (Test-Path -LiteralPath $GameAddonsPath -PathType Container)) {
     throw "Game addons folder not found: $GameAddonsPath"
 }
@@ -28,4 +36,3 @@ $targetItem = Get-Item -LiteralPath $target
     SizeBytes = $targetItem.Length
     TargetLastWriteTime = $targetItem.LastWriteTime
 }
-
